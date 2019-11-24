@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+    </style>
+</head>
+<body>
+            <!--//Top-Bar-->
+                <div class="container">
+                    <table id="example" class="table table-striped table-bordered" style="width:100%">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>File Name</th>
+                                <th>Issue Date</th>
+                                <th>Report</th>
+                                <th>Mast Name</th>
+                                <th>File Url</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <%for(let i=0;i<tabledata.length;i++){%>
+                            <tr>
+                                <td><%=tabledata[i].name%></td>
+                                <td><%=tabledata[i].email%></td>
+                                <td><%=tabledata[i].filename%></td>
+                                <td><%=tabledata[i].issue_date%></td>
+                                <td><%=tabledata[i].report%></td>
+                                <td><%=tabledata[i].mast%></td>
+                                <td style="text-align: center;"><a href="<%=tabledata[i].file_url%>"><button class="data_link_btn">View</button></a></td>
+                            </tr>
+                            <%}%>
+                        </tbody>
+                    </table>
+                </div>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+    $('#example').DataTable();
+} );
+</script>
+</body>
+</html>
